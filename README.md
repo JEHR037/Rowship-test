@@ -1,10 +1,8 @@
-************************************* LiquidityManager Project *******************************
-
+# LiquidityManager Project
 
 This project is a smart contract for managing liquidity between two tokens (USDC and USDT) on Ethereum-like blockchains. It allows liquidity management, admin control, and bot role management with secure access control and upgradeability.
 
-Features
-
+## Features
 
 * Role-Based Access Control: Uses OpenZeppelin's AccessControl for secure management of roles (Admin, Bot).
 * Liquidity Management: Withdraw and add liquidity between USDC and USDT.
@@ -13,17 +11,15 @@ Features
 * Wallet Management: Update admin and bot wallet addresses securely.
 * Test Coverage: Includes comprehensive unit tests using Foundry framework to ensure reliability.
 
-Setup & Installation
---------------------
+## Setup & Installation
+
 2. Install dependencies:
 
 npm install
 
 3. Configure Hardhat: Make sure you have your Hardhat configuration set up correctly in `hardhat.config.ts`.
 
-
-Smart Contract: LiquidityManager
----------------------------------
+## Smart Contract: LiquidityManager
 
 ### Description $$$
 
@@ -39,8 +35,7 @@ The LiquidityManager contract manages the liquidity of USDC and USDT by:
 * Role-based Access Control: ADMIN_ROLE can update wallets, withdraw liquidity, and assign roles. BOT_ROLE can manage liquidity and balance it automatically.
 * Wallet Management: Admin and Bot wallets can be updated.
 
-OpenZeppelin Standards & Libraries
-------------------------------------
+## OpenZeppelin Standards & Libraries
 
 The project leverages the following OpenZeppelin libraries for security and functionality:
 
@@ -48,8 +43,7 @@ The project leverages the following OpenZeppelin libraries for security and func
 * UUPSUpgradeable: For contract upgradeability.
 * IERC20: For token management (USDC & USDT).
 
-Key Functions
---------------
+## Key Functions
 
 * `updateAdminWallet(address newAdminWallet)`: Updates the admin wallet address.
 * `updateBotWallet(address newBotWallet)`: Updates the bot wallet address.
@@ -57,9 +51,9 @@ Key Functions
 * `autoBalanceLiquidity()`: Automatically balances liquidity between USDC and USDT.
 * `removeAndAddLiquidity()`: Allows the removal and addition of liquidity based on fixed or balanced amounts.
 
-Unit Tests (Foundry)
+## Unit Tests (Foundry)
 
-### Key Test Cases#######
+### Key Test Cases
 
 * Initialization: Ensures that the contract initializes correctly with the proper wallet addresses and tokens.
 * Admin and Bot Wallet Updates: Tests the functionality to update the admin and bot wallet addresses.
@@ -67,23 +61,18 @@ Unit Tests (Foundry)
 * Liquidity Check: Ensures that the contract checks liquidity needs and balances them correctly.
 * Role Management: Tests the assignment and revocation of the bot role.
 
-
-Deploying on Hardhat
---------------------
+*## Deploying on Hardhat*
 
 1. Deploy using Hardhat: Run the following command to deploy the contract to a network:
 
-
 npx hardhat run scripts/deploy.ts --network <network-name>
 
+**## Deliverables**
 
+Scripts: scripts/deploy.ts *REMEMBER TO CHANGE WALLETS*
+Coverage: rowshipTest.sol
 
-*############################ Deliverables  #####################################*
-Scripts :  scripts/deploy.ts  *REMENBER CHANGE WALLETS*
-Coverage : rowshipTest.sol
-
-
-########## High-Level Bot Workflow for Liquidity Management ########*
+## High-Level Bot Workflow for Liquidity Management
 
 *//Listening for External Triggers://***
 The bot is set up to monitor external events, such as changes in market conditions or price fluctuations of USDC and USDT.
